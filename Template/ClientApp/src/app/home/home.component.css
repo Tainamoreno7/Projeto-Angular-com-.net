@@ -1,0 +1,109 @@
+#container {
+    
+    height: 100%;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    font-size: 18;
+    font-weight: bold;
+    background-color: blueviolet;
+    
+}
+
+#login{
+    background-position: left;
+    display: flex;
+    align-items: left;
+    justify-content: left; 
+    color: yellow; 
+         
+ }
+
+#geral{
+    
+    margin-top: -60px;
+    margin-left: 10px;
+    display: table;
+    
+}
+
+
+.BoasVindas{
+    padding-top: 40px;
+    left: 20%;
+    right: 20%;
+    margin-top: 20%;
+    background: #FFF5F5; 
+  
+}
+
+#logo{
+     
+    width: 45%;
+    height: 45%;
+    float: left;
+
+}
+
+#texto{
+    max-width: 55%;
+    float: left;
+    position: relative;
+    display: inline;
+    text-align: center;
+    
+
+    
+}
+
+h1{
+    margin: 0 auto;
+    font-family: Cookie;
+    font-weight: normal;
+    font-size: 300%;
+    line-height: 100%;
+    text-align: center;
+    letter-spacing: 0.006em;
+    
+    
+    
+}
+
+
+#botao{
+    
+    
+    color: black;
+    font-family:Cookie;
+    background-position: center;
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+    background-color: blueviolet;
+   
+    
+    
+
+    
+    
+    
+    
+}
+
+
+p{
+    
+width: 80%;
+height: 80%;
+padding-left: 35px;
+padding-top: 20%;
+font-family: Abyssinica SIL;
+font-size: 150%;
+line-height: 30px;
+text-align: center;
+letter-spacing: 2px;
+color: #212121;
+
+
+}
