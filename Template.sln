@@ -27,7 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template.IoC", "Template.Io
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Tests", "0 - Tests", "{826C7178-C7C4-46E4-9CD2-8C0F571F7435}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template.Application.Tests", "Template.Application.Tests\Template.Application.Tests.csproj", "{628B9548-101F-43BD-A31A-FC19A22C332B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template.Application.Tests", "Template.Application.Tests\Template.Application.Tests.csproj", "{628B9548-101F-43BD-A31A-FC19A22C332B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

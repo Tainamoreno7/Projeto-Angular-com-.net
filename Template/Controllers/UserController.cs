@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using Template.Application.ViewModels;
 namespace Template.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController, Authorize]
     public class UsersController : ControllerBase
     {
         //Reponsável por comunicar com o frontend recebendo tudo que o frontend manda e enviando tudo que frontend precisa
@@ -22,7 +23,7 @@ namespace Template.Controllers
             this.userService = userService;
         }
 
-        [HttpGet]
+        [HttpGet, AllowAnonymous]
 
         public IActionResult Get()
         {
@@ -30,7 +31,7 @@ namespace Template.Controllers
             return Ok(this.userService.Get()); //economiza espaço de memória
         }
 
-        [HttpPost]
+        [HttpPost, AllowAnonymous]
         public IActionResult Post(UserViewModel userViewModel)
         {
             return Ok(this.userService.Post(userViewModel));
@@ -43,12 +44,15 @@ namespace Template.Controllers
         {
             return Ok(this.userService.GetById(id));
         }
-        [HttpPut]
+        [HttpPut, AllowAnonymous]
         //Editar o objeto
         public IActionResult Put(UserViewModel userViewModel)
         {
             return Ok(this.userService.Put(userViewModel));
         }
+
+      
+
 
 
     }

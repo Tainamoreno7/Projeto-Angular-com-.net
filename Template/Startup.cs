@@ -11,6 +11,7 @@ using Template.IoC;
 using AutoMapper;
 using Template.Application.AutoMapper;
 
+
 namespace Template
 {
     public class Startup
@@ -35,6 +36,9 @@ namespace Template
             services.AddAutoMapper(typeof(AutoMapperSetup));
      
             services.AddControllersWithViews();
+
+            
+
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
@@ -64,6 +68,8 @@ namespace Template
             }
 
             app.UseRouting();
+
+
 
             app.UseEndpoints(endpoints =>
             {

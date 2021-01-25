@@ -1,0 +1,24 @@
+{
+  "name": "Template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tainamoreno7/Projeto-Angular-com-.net.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tainamoreno7/Projeto-Angular-com-.net/issues"
+  },
+  "homepage": "https://github.com/Tainamoreno7/Projeto-Angular-com-.net#readme",
+  "dependencies": {
+    "@types/angular": "^1.8.0",
+    "download": "^8.0.0"
+  }
+}

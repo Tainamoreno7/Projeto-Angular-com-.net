@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Template.Data
+namespace Template.Auth
 {
     public class Class1
     {

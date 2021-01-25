@@ -1,11 +1,15 @@
 ﻿using AutoMapper;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Security.Cryptography;
 using System.Text;
 using Template.Application.Interfaces;
 using Template.Application.ViewModels;
+
 using Template.Domain.Entities;
 using Template.Domain.Interfaces;
+using ValidationContext = System.ComponentModel.DataAnnotations.ValidationContext;
 
 namespace Template.Application.Services
 {
@@ -24,6 +28,7 @@ namespace Template.Application.Services
             this.userRepository = userRepository;
             this.mapper = mapper;
         }
+
 
         public List<UserViewModel> Get()
         {
@@ -78,6 +83,9 @@ namespace Template.Application.Services
             return true;
 
         }
+
+
+
     }
 }
 
