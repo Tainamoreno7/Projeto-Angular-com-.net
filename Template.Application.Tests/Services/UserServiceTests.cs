@@ -70,7 +70,7 @@ namespace Template.Application.Tests.Services
         [Fact]
         public void Post_SendingValidObject()
         {
-            var result = userService.Post(new UserViewModel { Name = "Nicolas Fontes", Email = "nicolas.rfontes@gmail.com" });
+            var result = userService.Post(new UserViewModel { NameClient = "User Default", NameContact = "Taina" });
             Assert.True(result);
         }
 
@@ -79,7 +79,8 @@ namespace Template.Application.Tests.Services
         {
             //Criando a lista com um objeto para que seja retornado pelo repository
             List<User> _users = new List<User>();
-            _users.Add(new User { Id = Guid.NewGuid(), Name = "Nicolas Fontes", Email = "nicolas.rfontes@gmail.com", DateCreated = DateTime.Now });
+            _users.Add(new User { Id = Guid.NewGuid(), NameClient = "User Default", NameContact = "Taina", DateCreated = DateTime.Now , CNPJ = "73.686.370.0179-20", 
+            DateClient = new DateTime(2020, 2, 2)});
             //Criando um objeto mock do UserRepository e configurando para retornar a lista criada anteriormente se chamar o método GetAll()
             var _userRepository = new Mock<IUserRepository>();
             _userRepository.Setup(x => x.GetAll()).Returns(_users);
@@ -102,7 +103,7 @@ namespace Template.Application.Tests.Services
         [Fact]
         public void Post_SendingInvalidObject()
         {
-            var exception = Assert.Throws<ValidationException>(() => userService.Post(new UserViewModel { Name = "Nicolas Fontes" }));
+            var exception = Assert.Throws<ValidationException>(() => userService.Post(new UserViewModel { NameClient = "User Default" }));
             Assert.Equal("The Email field is required.", exception.Message);
         }
 

@@ -25,23 +25,32 @@ namespace Template.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("CNPJ")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime>("DateClient")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime>("DateCreated")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2021, 1, 24, 17, 58, 25, 266, DateTimeKind.Local).AddTicks(2661));
+                        .HasDefaultValue(new DateTime(2021, 1, 25, 22, 32, 21, 901, DateTimeKind.Local).AddTicks(3919));
 
                     b.Property<DateTime?>("DateUpdated")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
 
-                    b.Property<string>("Name")
+                    b.Property<string>("NameClient")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("NameContact")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
@@ -54,10 +63,12 @@ namespace Template.Data.Migrations
                         new
                         {
                             Id = new Guid("c7dce21b-d207-4869-bf5f-08eb138bb919"),
+                            CNPJ = "73.681.375.0189-25",
+                            DateClient = new DateTime(2020, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DateCreated = new DateTime(2020, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "userdefault@template.com",
                             IsDeleted = false,
-                            Name = "User Default"
+                            NameClient = "User Default",
+                            NameContact = "Taina"
                         });
                 });
 #pragma warning restore 612, 618

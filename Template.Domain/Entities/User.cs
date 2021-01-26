@@ -9,14 +9,16 @@ namespace Template.Domain.Entities
      //herdando da classe Entity
     {
 
-        // public Guid CNPJ { get; set; } //Representa um identificador global Exclusivo
-        public string Name { get; set; }
-        public string Email { get; set; }
-        //public string Namecontact { get; set; }
+        public string CNPJ { get; set; } //Representa um identificador global Exclusivo
+        public string NameClient { get; set; }
+        public string NameContact { get; set; }
+        public DateTime DateClient { get; set; }
+
+    //public string Namecontact { get; set; }
 
 
 
 
-    }
+}
 
 }

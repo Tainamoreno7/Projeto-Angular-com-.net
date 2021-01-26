@@ -16,9 +16,11 @@ namespace Template.Data.Mappings
         {
 
             builder.Property(x => x.Id).IsRequired(); //obrigatório
-            builder.Property(x => x.Name).HasMaxLength(100).IsRequired(); //obrigatório
-            builder.Property(x => x.Email);
-            builder.Property(x => x.DateCreated).IsRequired();
+            builder.Property(x => x.NameClient).HasMaxLength(100).IsRequired(); //obrigatório
+            builder.Property(x => x.NameContact).HasMaxLength(100).IsRequired();//obrigatorio
+            builder.Property(x => x.CNPJ).HasMaxLength(50);
+            builder.Property(x => x.DateCreated);
+            builder.Property(x => x.DateClient);
             
         }
 

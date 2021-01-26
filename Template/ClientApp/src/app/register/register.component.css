@@ -1,0 +1,20 @@
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.form-inline {
+  align-items: center;
+  justify-content: center;
+  table-layout: auto;
+  block-size: 50%;
+}
+
+h1 {
+  padding-top: 10%;
+  font-family: Abyssinica SIL;
+  font-size: 150%;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #212121;
+}

@@ -1,0 +1,17 @@
+<body>
+
+  <h1>Digite a baixo sua razão social ou nome fantasia </h1>
+  <form class="form-inline">
+
+    <div class="form-group mx-sm-3 mb-2">
+
+      <label class="sr-only">Nome</label>
+      <input type="text" class="form-control" id="inputnome"
+             placeholder="Digite sua razão social ou nome fantasia" ([ngModel])="userLogin" name="NameClient">
+    </div>
+    <button type="submit" class="btn btn-primary mb-2" (click) ="authenticate()">Continuar</button>
+  </form>
+
+
+
+</body>

@@ -1,15 +1,12 @@
 ﻿using AutoMapper;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Security.Cryptography;
 using System.Text;
 using Template.Application.Interfaces;
 using Template.Application.ViewModels;
-
 using Template.Domain.Entities;
 using Template.Domain.Interfaces;
-using ValidationContext = System.ComponentModel.DataAnnotations.ValidationContext;
+
 
 namespace Template.Application.Services
 {
@@ -46,10 +43,10 @@ namespace Template.Application.Services
             User _user = new User
             {
                 Id = Guid.NewGuid(),
-                Email = userViewModel.Email,
-                Name = userViewModel.Name,
-
-
+                CNPJ = userViewModel.CNPJ,
+                NameContact = userViewModel.NameContact,
+                NameClient = userViewModel.NameClient,
+                DateClient = userViewModel.DateClient,
             };
 
             this.userRepository.Create(_user);
@@ -62,13 +59,14 @@ namespace Template.Application.Services
         {
             if (!Guid.TryParse(id, out Guid userId))//Transformar String em 
                 throw new Exception("UserID is not valid");
-
             User _user = this.userRepository.Find(x => x.Id == userId && !x.IsDeleted);
             if (_user == null)
                 throw new Exception("User not found");//Se não encontrar o Usuário
 
             return mapper.Map<UserViewModel>(_user);
         }
+
+        
         public bool Put(UserViewModel userViewModel)
         {
             if (userViewModel.Id == Guid.Empty)
@@ -84,9 +82,24 @@ namespace Template.Application.Services
 
         }
 
+       public UserViewModel GetByName(string name)
+        {
 
+            if (string.IsNullOrEmpty(name))
+                throw new Exception("Adicione seu nome!");
+            User _user = this.userRepository.Find(x => x.NameClient == name && !x.IsDeleted);
+            if (_user == null)
+                throw new Exception("User not found");//Se não encontrar o Usuário
 
+            return mapper.Map<UserViewModel>(_user);
+        }
     }
+
+
+
+
+
 }
+
 
     

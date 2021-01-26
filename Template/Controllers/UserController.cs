@@ -34,6 +34,9 @@ namespace Template.Controllers
         [HttpPost, AllowAnonymous]
         public IActionResult Post(UserViewModel userViewModel)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
             return Ok(this.userService.Post(userViewModel));
         }
 
@@ -44,6 +47,14 @@ namespace Template.Controllers
         {
             return Ok(this.userService.GetById(id));
         }
+
+        [HttpGet("register"), AllowAnonymous]
+        //Buscar o Campo NameClient
+        public IActionResult GetByName(string name)
+        {
+            return Ok(this.userService.GetByName(name));
+        }
+
         [HttpPut, AllowAnonymous]
         //Editar o objeto
         public IActionResult Put(UserViewModel userViewModel)

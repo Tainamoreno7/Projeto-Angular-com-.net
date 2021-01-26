@@ -1,1 +1,51 @@
-<p>users works!</p>
+
+
+<div *ngIf ="showList"  >
+  <form>
+    <div class="col-md-6">
+      <label for="inputNameClient" class="form-label">Nome do Cliente</label>
+      <input type="text" class="form-control" placeholder="Razão Social ou Nome Fantasia" [(ngModel)]="user.NameClient" name="NameClient" required>
+
+    </div>
+    <div class="col-md-6">
+      <label for="inputNameContact" class="form-label">Nome do Contato </label>
+      <input type="text" class="form-control" id="inputNameContact" [(ngModel)]="user.NameContact" name="NameContact" required>
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputCNPJ" class="form-label">CNPJ</label>
+      <input type="text" class="form-control" id="inputCNPJ" [(ngModel)]="user.CNPJ" name="NameContact">
+    </div>
+
+    <div class="col-md-6">
+      
+        <label class="form-label" for="inputDateClient">Data em que se tornou cliente </label>
+        <input class="form-control" type="datetime" id="inputDateClient" [(ngModel)]="user.DateClient" name="user.DateClient">
+
+     
+    </div>
+    <div class="col-md-6">
+      <button type="submit" class="btn btn-primary" (click)="post()">Salvar</button>
+    </div>
+  </form>
+</div>
+
+<div>
+  <form *ngIf="!showList">
+    <div class="form-group">
+      <label for="formControlRange">
+        Em uma escala de 0 a 10, qual a probabilidade de você recomendar nosso
+        produto/serviço a um amigo/conhecido?
+      </label>
+      <input type="range" class="form-control-range" id="formControlRange" min="1" max="10" value="1"
+             (input)="valueChanged($event)" oninput="display.value=value" onchange="display.value=value">
+      <input type="text" id="display" value="0" readonly>
+      {{ rangevalue }}
+    </div>
+
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Qual é o motivo dessa nota?</label>
+      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Digite Aqui">
+    </div>
+  </form>
+</div>

@@ -8,7 +8,10 @@ namespace Template.Application.ViewModels
     {
         // Campos que desejo retornar para o frontend 
         public Guid Id { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
+        public string NameContact { get; set; }
+        public string NameClient { get; set; }
+        public string CNPJ { get; set; }
+        public DateTime DateClient { get; set; }
+        
     }
 }
